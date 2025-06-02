@@ -1,0 +1,318 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #4CAF50; /* 초록색 */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/* 내비게이션 바 스타일 */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 가로 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* 메인 콘텐츠 영역 */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 대시보드 섹션 */
+section#dashboard {
+    text-align: center;
+    padding: 30px 0;
+}
+
+section#dashboard h2 {
+    color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+section#dashboard p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* 카테고리 그리드 레이아웃 */
+.category-grid {
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 반응형 컬럼 설정 */
+    gap: 20px; /* 카드 간 간격 */
+    margin-top: 30px;
+}
+
+/* 개별 카테고리 카드 스타일 */
+.category-card {
+    background-color: #f9f9f9; /* 카드 배경색 */
+    border: 1px solid #ddd; /* 카드 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* 카드 그림자 */
+    transition: transform 0.3s ease; /* 호버 애니메이션 */
+}
+
+.category-card:hover {
+    transform: translateY(-5px); /* 마우스 올렸을 때 살짝 위로 */
+}
+
+.category-card h3 {
+    color: #4CAF50; /* 제목 색상 */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee; /* 점선 밑줄 */
+    padding-bottom: 10px;
+}
+
+.category-card ul {
+    list-style: none; /* 목록 점 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+.category-card ul li {
+    margin-bottom: 10px; /* 목록 항목 간 간격 */
+}
+
+.category-card ul li a {
+    color: #333; /* 링크 글자색 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: normal;
+    display: block; /* 링크 영역 확장 */
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.category-card ul li a:hover {
+    color: #007bff; /* 마우스 올렸을 때 파란색으로 변경 */
+}
+
+/* 메시지 표시 영역 스타일 */
+#message-display {
+    background-color: #e0f7fa; /* 연한 하늘색 배경 */
+    color: #00796b; /* 글자색 */
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #b2ebf2; /* 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    text-align: center;
+    font-weight: bold;
+    opacity: 1; /* 기본 투명도 */
+    transition: opacity 0.5s ease-in-out; /* 투명도 변화 애니메이션 */
+}
+
+/* 숨김 상태 클래스 */
+#message-display.hidden {
+    opacity: 0; /* 완전히 투명하게 */
+    height: 0; /* 높이 0으로 만들어서 공간 차지 안함 */
+    padding: 0; /* 패딩 제거 */
+    border: none; /* 테두리 제거 */
+    overflow: hidden; /* 내용 숨김 */
+}
+
+/* 모달(팝업) 기본 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed; /* 화면에 고정 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* 내용이 넘치면 스크롤 */
+    background-color: rgba(0,0,0,0.6); /* 반투명 검은색 배경 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+
+.modal.hidden {
+    display: none;
+}
+
+/* 모달 내용 상자 스타일 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 상하 여백, 가운데 정렬 */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* 모바일 화면에 맞게 너비 조절 */
+    max-width: 600px; /* 최대 너비 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative; /* 닫기 버튼 위치 지정을 위해 */
+}
+
+/* 닫기 버튼 스타일 */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 텍스트 입력 영역 스타일 */
+textarea#user-input {
+    width: calc(100% - 20px); /* 패딩 고려 */
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    resize: vertical; /* 수직으로만 크기 조절 가능 */
+    min-height: 100px;
+}
+
+/* 버튼 스타일 */
+button#generate-button,
+button#copy-button {
+    background-color: #4CAF50; /* 초록색 */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button#generate-button:hover,
+button#copy-button:hover {
+    background-color: #45a049;
+}
+
+button#copy-button {
+    background-color: #007bff; /* 파란색 */
+    margin-left: 10px;
+}
+
+button#copy-button:hover {
+    background-color: #0056b3;
+}
+
+/* 로딩 인디케이터 스타일 */
+#loading-indicator {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* 생성된 문서 출력 영역 스타일 */
+#generated-document-output {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+#generated-document-output h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#generated-document-output pre {
+    background-color: #e9e9e9;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap; /* 긴 텍스트 줄바꿈 */
+    word-wrap: break-word; /* 단어 단위 줄바꿈 */
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 */
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    textarea#user-input {
+        min-height: 80px;
+    }
+    button#generate-button,
+    button#copy-button {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
